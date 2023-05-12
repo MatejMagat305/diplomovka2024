@@ -1,0 +1,7 @@
+1-3. týždeň hladať zaujmavé abstrakty článkov - hotovo
+4-8. týždeň hladanie dobrej implementácie pohybu šípok - hotovo
+9-13. týždeň rozbehanie bitalino a začatie zbierania dát + dočítanie článkov - hotovo
+leto
+1-4. týždeň dozbieranie dát
+4+ týždeň hladanie ešte nejakej EEG aleternatívy - čelenky ...
+september - natrénovanie NN 
