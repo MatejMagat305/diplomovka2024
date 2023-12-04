@@ -1,0 +1,282 @@
+\documentclass[12pt, twoside]{book}
+%\documentclass[12pt, oneside]{book}  % jednostranna tlac
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage[slovak]{babel} % vypnite pre prace v anglictine
+\linespread{1.25} % hodnota 1.25 by mala zodpovedat 1.5 riadkovaniu
+
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{url}
+
+% --- additional packages
+\usepackage{epsfig}
+\usepackage{epstopdf}
+%\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+%\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{subcaption}
+\usepackage[font=large]{subcaption}
+\usepackage{emptypage}
+\usepackage{float}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{minted}
+\usepackage[thinlines]{easytable}
+\usepackage{amsmath}
+
+\def\mfrok{2024}
+\def\mfnazov{Ovládanie modelu invalidného vozíka pomocou bio-signálov \\
+\textit{Controlling of a wheelchair using biosingals}}
+\def\mftyp{Diplomová práca}
+\def\mfautor{Matej Magát}
+\def\mfskolitel{Mgr. Peter Náther, PhD.}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+%ak mate konzultanta, odkomentujte aj jeho meno na titulnom liste
+\def\mfkonzultant{prof. Ing. Peter Hubinský, PhD. }  
+
+\def\mfmiesto{Bratislava, \mfrok}
+
+\def\mfodbor{ Informatika} 
+\def\program{ Aplikovaná informatika }
+
+\def\mfpracovisko{ Katedra informatiky }
+
+\begin{document}     
+\frontmatter
+
+
+% -------------------
+% --- Obalka ------
+% -------------------
+\thispagestyle{empty}
+
+\begin{center}
+\sc\large
+Univerzita Komenského v Bratislave\\
+Fakulta matematiky, fyziky a informatiky
+
+\vfill
+
+\begin{figure}[!hbt]
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{images/FMFI_logo_BP.png}
+		\label{img:logo}
+	\end{center}
+\end{figure}
+{\LARGE\mfnazov}\\
+\mftyp
+\end{center}
+
+\vfill
+
+{\sc\large 
+\noindent \mfrok\\
+\mfautor
+}
+
+\cleardoublepage
+% --- koniec obalky ----
+
+% -------------------
+% --- Titulný list
+% -------------------
+
+\thispagestyle{empty}
+\noindent
+
+\begin{center}
+\sc  
+\large
+Univerzita Komenského v Bratislave\\
+Fakulta matematiky, fyziky a informatiky
+
+\vfill
+
+\begin{figure}[!hbt]
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{images/logo_fmph_dark.png}
+		\label{img:logo}
+	\end{center}
+\end{figure}
+{\LARGE\mfnazov}\\
+\mftyp
+\end{center}
+
+\vfill
+
+\noindent
+\begin{tabular}{ll}
+Študijný program: & \program \\
+Študijný odbor: & \mfodbor \\
+Školiace pracovisko: & \mfpracovisko \\
+Školiteľ: & \mfskolitel \\
+Konzultant: & \mfkonzultant \\
+\end{tabular}
+
+\vfill
+
+
+\noindent \mfmiesto\\
+\mfautor
+
+\cleardoublepage
+% --- Koniec titulnej strany
+
+
+% -------------------
+% --- Zadanie z AIS
+% -------------------
+% v tlačenej verzii s podpismi zainteresovaných osôb.
+% v elektronickej verzii sa zverejňuje zadanie bez podpisov
+% v pracach v naglictine anglicke aj slovenske zadanie
+
+\newpage 
+\thispagestyle{empty}
+\hspace{-2cm}\includegraphics[width=1.0\textwidth]{images/zadanieDP}
+
+% --- Koniec zadania
+
+\frontmatter
+\begin{center}
+\end{center}
+% -------------------
+%   Poďakovanie - nepovinné
+% -------------------
+\setcounter{page}{3}
+\newpage 
+~
+
+\vfill
+{\bf Čestné prehlásenie:} \\
+{\tab[2cm] Čestne prehlasujem, že túto diplomovú prácu som vypracoval samostatne s použitím uvedených zdrojov ... .}
+\newpage 
+~
+
+\vfill
+{\bf Poďakovanie:}  \\
+{\tab[2cm] Chcel by som sa takouto formou poďakovať môjmu školiteľovi \mfskolitel za rady a usmernenia počas mojej práce na tejto téme ... .}
+% --- Koniec poďakovania
+
+% -------------------
+%   Abstrakt - Slovensky
+% -------------------
+\newpage 
+\section*{Abstrakt}
+Magát, Matej.   \textsl{\mfnazov}
+[Diplomová práca]. Univerzita Komenského v Bratislave. Fakulta matematiky, fyziky a 
+informatiky; Katedra aplikovanej informatiky. Školiteľ: \mfskolitel; Konzultant: \mfkonzultant; Komisia pre obhajoby: Aplikovaná informatika. Predseda: ... stupeň 
+kvalifikácie: Magister. Bratislava: FMFI UK, 2024. .\\
+\newline
+\tab[5 mm] Cieľom mojej diplomovej práce bolo nájsť vhodné biosignály, ktoré by sa dali použiť na ovládanie elektrického (inteligentného) vozíka a ich použitie na interakciu s počítačom, či iným elektronickým zariadením, a umožniť tak zdravotne znevýhodneným, obzvlásť ľudom, ktorý majú ochrnuté ruky ovládať elektronické zariadenia. Počas plnenia cieľa vnikol (vznikli) program na ovládanie myši ... .\\
+
+\vfill
+\paragraph*{Kľúčové slová:} biosignály, elektrický vozík, ... 
+% --- Koniec Abstrakt - Slovensky
+
+
+% -------------------
+% --- Abstrakt - Anglicky 
+% -------------------
+\newpage 
+\section*{Abstract}
+....
+
+
+\paragraph*{Keywords: biosignals, ....} 
+
+% --- Koniec Abstrakt - Anglicky
+
+% -------------------
+% --- Predhovor - v informatike sa zvacsa nepouziva
+% -------------------
+%\newpage 
+%\thispagestyle{empty}
+%
+%\huge{Predhovor}
+%\normalsize
+%\newline
+%Predhovor je všeobecná informácia o práci, obsahuje hlavnú charakteristiku práce 
+%a okolnosti jej vzniku. Autor zdôvodní výber témy, stručne informuje o cieľoch 
+%a význame práce, spomenie domáci a zahraničný kontext, komu je práca určená, 
+%použité metódy, stav poznania; autor stručne charakterizuje svoj prístup a svoje 
+%hľadisko. 
+%
+% --- Koniec Predhovor
+
+
+% -------------------
+% --- Obsah
+% -------------------
+
+\newpage 
+
+\tableofcontents
+
+% ---  Koniec Obsahu
+
+% -------------------
+% --- Zoznamy tabuliek, obrázkov - nepovinne
+% -------------------
+
+%\newpage 
+
+%\listoffigures
+%\listoftables
+
+% ---  Koniec Zoznamov
+
+\mainmatter
+
+
+\input{ slovnik_pojmov.tex}
+\input{ uvod.tex}
+\input{ prehlad.tex}
+\input{ poznatky_z_literatúry.tex}
+\input{ vypoctove_metody.tex}
+\input{ hypotezy_ciele.tex}
+\input{ navrh_experimentov.tex}
+\input{ implementacia.tex}
+\input{ experimenty_vysledky.tex}
+
+% \input{ prirucky.tex}
+
+\input lorem.tex
+
+\input zaver.tex
+
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{references}
+
+% -------------------
+%--- Prilohy---
+% -------------------
+
+%Nepovinná časť prílohy obsahuje materiály, ktoré neboli zaradené priamo  do textu. Každá príloha sa začína na novej strane.
+%Zoznam príloh je súčasťou obsahu.
+%
+\end{document}
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+\chapter{Používateľské príručky}
+\tab[5 mm] Tu sú popísané jednotlivé príručky k jednotlivým verziám.
+\section{ Problém jedného telesa }
+\tab[5 mm] Program má niekoľko atribútov, ktoré sú meniteľné počas chodu programu(behom módu init, ktorý je opísaný nižšie): 
+\begin{itemize}
+\item	\uv{AutoScale}, ktoré uvádza, či program má automaticky Škálovať.
+\item	 \uv{FixedScale}, ktoré uvádza, že program nemá dovoliť Škálovať ani počítaču a ani pomocou klávesnice. 
+\item	\uv{ForceCircularOrbit}, ktoré uvádza, či program má upraviť rýchlosť tak, aby dráha bola kruhová. 
+\item	\uv{StepsForward} je hodnota krokov, ktoré má počítač vykonať bez animácie(na začiatku a aj na príkaz). 
+\item	\uv{FixedCentre} je nastavenie na to aby stred “kamery” bol stále namierený do bodu 0,0.
+\item	\uv{WriteExcelFiles} - nastavenie, či program má zapisovať údaje do excelovských súborov. 
+\item	\uv{HowManyPositionsBack} - nastavenie, koľko pozícii do zadu si program má pamätať.
+\item	 \uv{RememberWholeOrbit} - nastavenie, či si program má pamätať všetky pozície od začiatku.
+\item	\uv{SpeedMovePixel} - slúži na určenie rýchlosti pohybu po obrazovke.
+\end{itemize}
+
+\tab[5 mm] Program má 4 módy(fázy):
+\begin{itemize}
+\item	\uv{init} - pomocou šípok  sa dá nastaviť krok a epsilon simulácie a iné premenné, užívateľ si tu môže vybrať atribút, ktorý chce zmeniť a následne ho môže zmeniť. Zobrazuje sa iba vybratá premenná, v tejto fáze sa objavujú rozličné varovania(warningy), ktoré upozorňujú na nenačítané dáta, alebo na únikovú rýchlosť   -  warning o rýchlosti sa objaví iba v prípade, že nie je nastavené  \uv{ForceCircularOrbit} na \uv{true}.
+\item	\uv{animation–stop} -  epsilon sa meniť nedá, tak ako aj ďalšie atribúty. Animácia je stopnutá a ani výpočet sa nevykonáva automaticky, môže sa však nastaviť krok a krokovať .
+\item	\uv{animation–play} - animácia beží sama.
+\item	\uv{compute} - zobrazuje v polsekundových intervaloch koľko už počítač vypočítal, tento mód sa vykresľuje iba pre veľké \uv{StepsForward}, pre malé výpočet trvá tak krátko, že sa vykreslí na okamich čierna obrazovka, ale tá po polsekunde sa znova prekreslí novým stavom animácie.  
+\end{itemize}
+\tab[5 mm] Program sa štartuje dvojklikom - nie je nutné ho spúšťať cez príkazový riadok. Program automaticky načíta config.txt.\\
+\tab[5 mm] Program z config.txt načíta okrem meniteľných atribútov aj také, ktoré sa v móde init nedajú meniť: \uv{PositionX}, \uv{PositionY}, \uv{VelocityX},\uv{VelocityY}, ktoré určujú začiatočnú polohu,  \uv{Scale}, ktorý označuje začiatočné škálovanie a \uv{SpeedScaledPercent}, ktoré určuje rýchlosť škáľovania v percentách, keď sa načíta príliš veľké percento (nad 100), tak program dosadí default(50) to isté pre nižšie ako 0.\\ 
+\tab[5 mm] Počiatočný stav sa kontroluje v config.txt. program akceptuje riadky so správne zadaným menom, znamienkom rovnosti a hodnotami správneho typu.\\
+\tab[5 mm] Ak program nerozpozná správne meno v riadku dosadí  oznámi to používateľovi po otvorení aplikácie hláskou \uv{warning}, ktorý riadok a čo bolo v tom riadku.  Program na začiatku vytvorí defaultné dáta, ktoré potom prepisuje načítaním z configu. \\
+\tab[5 mm] Ak program načíta samé nuly dosadí default.\\
+\tab[5 mm] POZOR: epsilon musí byť vo formáte .0xyz.... ak je epsilon väčšie ako 1.00(prípadne číslo menšie ako \(10^-13\)), tak sa epsilon nastaví na default.\\
+\tab[5 mm] Hneď po spustení sa program spustí v \uv{init}-móde.\\
+\tab[5 mm] Po potvrdení sa spustí mód \uv{compute}, ktorý vypočíta niekoľko krokov bez animácie, pričom počet krokov závisí na premennej \uv{StepsForward}. Po skončení \uv{compute} módu sa objaví animácia v móde \uv{animation–stop}.\\
+\tab[5 mm] V \uv{animation–stop} a \uv{animation–play} sa pod animáciou zobrazuje pozícia x, y. nad animáciou sa zobrazujú informácie: ktorá metóda je to, zvolené epsilon, čas a krok.\\
+\tab[5 mm] Animáciu(v  \uv{animation–stop} aj \uv{animation–play}) možno dočasne prerušiť úplne uvedením programu do výpočtového režimu(\uv{compute} módu), stlačením \uv{c} na klávesnici.
+V   módoch  \uv{animation–stop} aj \uv{animation–play} sa dá meniť škálovanie, ale musia byť vypnuté dve funkcie(nastavené na \uv{false}):  \uv{FixedScale} a \uv{AutoScale}.\\
+\tab[5 mm] V   módoch  \uv{animation–stop} aj \uv{animation–play} sa dá meniť stred \uv{kamery}, ale musí byť nastavený atribút \uv{FixedCentre} na \uv{false}.\\
+\tab[5 mm] Ak je nastavená premenná \uv{WriteExcelFiles} na \uv{true} a zároveň \uv{RememberWholeOrbit}  je nastavená na \uv{true}, tak sa po skončení  ešte nejaký čas(závisí od veľkosti nazhromaždených údajov) bude zapisovať do xsxl súborov, ktorých názov pozostáva z názvu metódy a epsilonu, ktoré bolo zvolené v programe, súbory sa zapíšu do adresára files, keď program zistí, že taký adresár nie je, tak ho vytvorí.
+Na ľavom boku animácie sa zobrazuje select voľba, ktorá slúži na to aby sa vedela vybrať plocha, ktorá sa \uv{pozametá} sprievodičom.
+Na pravom boku je legenda \uv{pozametaných plôch} aj s hodnotami, ktorá sa objaví až po zmeraní prvej plochy.\\  
+ovládanie:
+\begin{itemize}
+
+\item	Tlačidlo escape slúži na zatvorenie aplikácie.
+\item	Tlačidlom enter na začiatku slúži na potvrdenie epsilónu a začatie simulácie. 
+\item	Tlačidlom p sa spúšťajú/zastavujú všetky metódy do automatického módu.
+\item	Medzerníkom sa dá nastaviť, či bývalé pozície telesa sa budú vykresľovať ako body alebo ako úsečky.
+\item	Tlačidlami plus a mínus sa ovláda aký je veľký krok. 
+\item	V móde \uv{init} sa tlačidlami doprava a doľava dá meniť parameter epsilón a iné atribúty, v móde  \uv{animation–stop} a \uv{animation–play} sa s týmito tlačidlami pohybuje "kamerou" (doprava a doľava). 
+\item	V móde \uv{init} sa tlačidlami hore a dole vyberá, ktorý atribút užívateľ chce zmeniť, v móde  \uv{animation–stop} a “animation–play” sa s týmito tlačidlami pohybuje "kamerou"  (hore a dole).
+\item	Tlačidlom e sa vymieňajú pohľady na metódy .
+\item	Tlačidlom k sa krokuje animácia v zastavenom móde .
+\item	Tlačidlom s sa vyberá pred stlačením k, ktoré plochy má rátať a ktoré nie.
+\item	Tlačidlom c sa zastaví animácia, program sa prepne do režimu \uv{compute} a vykoná  \uv{StepsForward} krokov, potom sa tento režim vráti do režimu krokovania.
+\item	Tlačidlami n a m sa ovláda škáľovanie. n vzďaľuje a m približuje.
+\end{itemize}
+
+\section{Problém dvoch telies bez retardácie}
