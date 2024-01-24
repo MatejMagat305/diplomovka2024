@@ -7,4 +7,4 @@ tento podadresár je 1. verziou programu, ktorý pomocou klávesnice ovláda my�
 # server_plus_demo
 obsahuje prototyp servera, ktorý bude počúvať http requesty, ktoré budú prichádzať z programu na spracovanie EEG a EMG
 # diplomovka
-obsahuje zdrojáky, pdf, ale aj milníky
+obsahuje zdrojáky, pdf.
