@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 48.6, "left": -19.8, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": 66.6,
+      "left": -157.8,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "joystick1:VCC", "uno:5V", "red", [ "v172.8", "h268.8" ] ],
+    [ "joystick1:VERT", "uno:A0", "green", [ "v163.2", "h326.4" ] ],
+    [ "joystick1:SEL", "uno:2", "green", [ "v-220.8", "h345.6" ] ],
+    [ "joystick1:GND", "uno:GND.1", "blue", [ "v-201.6", "h201.6" ] ],
+    [ "joystick1:HORZ", "uno:A1", "gold", [ "v153.6", "h307.2" ] ]
+  ],
+  "dependencies": {}
+}
