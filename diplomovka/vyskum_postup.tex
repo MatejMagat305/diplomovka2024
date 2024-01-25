@@ -1,0 +1,26 @@
+\chapter{návrh, výskum a postup}
+
+\section{Ovládanie kurzora programom}
+\tab[5 mm] Prvý cieľ, prenositeľnosť, sa podarilo u tohto prvého myľníka splniť výberom programovacích jazykov Python a Golang.
+\subsection{Popis programu}
+\tab[5 mm] Tento jednoduchý program má za úlohu \uv{iba} hýbať myšou pomocou klávesníc na klávesnici podľa preddefinovaného konfiguračného súbora. Tento jednodochý program je síce vytvorený v Golangu, ale dá sa pomerne ľahko integrovať do väčšieho projektu, ktorého programovacím jazykom je Python.
+\subsection{Dôvod jeho vytvorenia}
+\tab[5 mm] Súčasťou tejto diplomovej práce je aj hľadať alternatívne spôsoby riadenia počítačového zariadenia, preto bolo vhodné začať práve s týmto programom.
+\section{Bitalino} 
+\tab[5 mm] Do tohto zariadenia sme vkladali veľké očakávania, vzhľadom na jeho písané vlastnosti, no nepodarilo sa nám z neho získať zmysluplné dáte, čo súvisí aj s povahou DMO.
+\subsection{Pokus}
+\tab[5 mm] Bitalino bola naša prvá voľba, kvôli potenciálu, ktorý sľuboval. Pokúsili sme sa umiestniť elektródy, podľa návodov dokumentácie k tomuto zariadeniu.  a očakávali sme ...
+\subsection{Problém}
+\tab[5 mm] Kvôli zášklbom sa tažko pripevňovali elektródy na svoje miesta, navyše umiestnenie ako je na obr.\\
+pridať obr. .......\\
+sa len tažko dosahuje aj bez zášklbov, sme usúdili, že takéto zášklby by museli mať nejaké protiopatrenia (nehovoriac o tom, že aj v mozgu by ..., ale to by sa dalo odstrániť filtrami),%, rozpitvať to v diskusii?)
+ preto sme sa rozhodli preskúmať iné technológie. 
+\section{Vlastné riešenie(zariadenie)} % dať samostatnú kapitolu
+\tab[5 mm] Pri preskúmaní technológii ako \uv{Tobii}, \uv{Eva faciál mouse} sa nám naskytla otázka, či tieto technológie by sa dali, zrýchliť a sprístupniť, pretože \uv{Tobii} je stredne nákladná technológia, ktorá nie vždy je voľná na predaj, navyše vyžaduje  veľkú pozornosť očí. % dopísať skúsenosti, pomalé, bolia oči, nemožnosť sa pohnúť ...
+\\ 
+\tab[5 mm] \uv{Eva faciál mouse} je síce voľne prístupná aplikácia pre všetky android zariadenia, ale je nepresná a pomalá.\\ 
+\tab[5 mm] Preto sme si povedali, že urobíme program, ktorý skombinuje rozpoznávanie tváre podobné \uv{Eva faciál mouse} a joystickom, ktorý bude ovládaný jazykom a bude sa dávať do úst.\\ 
+\tab[5 mm] preto sme zvolili využitie platformy Arduino, Bluetooth modulu a joysticku. Arduino, open-source mikrokontrolér, pktorý oskytuje flexibilitu a možnosť prispôsobenia pre rôzne projekty. Jeho schopnosť interakcie s rôznymi senzormi a aktuátormi umožňuje vytvárať robustné a prispôsobiteľné asistenčné riešenia.\\ 
+\tab[5 mm] Bluetooth modul je kľúčovým komponentom nášho systému, umožňujúcim bezdrôtovú komunikáciu medzi Arduino a ďalšími zariadeniami. To nám poskytne väčšiu voľnosť pohybu a umožňuje vzdialené ovládanie asistenčných funkcií.\\ 
+\tab[5 mm] Joystick, ako vstupný zariadenie, bude hrať kľúčovú úlohu pri poskytovaní presného ovládania, čo následne budeme kombinovať s algoritmami počítačového videnia. Joystick bude pripevnený na držadle, do kttorého sa zahryznú zuby. \\ 
+\tab[5 mm] dopísať ......
